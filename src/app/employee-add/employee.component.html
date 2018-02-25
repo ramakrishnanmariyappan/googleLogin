@@ -1,0 +1,38 @@
+<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 text-center">
+  <form [formGroup]="postAdd" (ngSubmit)="OnSubmit()">
+      <div class="form-group col-xs-4">
+        <label for="formName">Name</label>
+        <input type="text" class="form-control" id="inputName" placeholder="Jane Doe" formControlName='name'>
+        <p *ngIf="name.invalid">{{getErrorName()}}</p>        
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="exampleInputEmail2">Email</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="jane.doe@example.com" formControlName='email'>
+        <p *ngIf="email.invalid">{{getErrorEmail()}}</p>                
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="exampleInputEmail2">DOB</label>
+        <my-date-picker name="dob" [options]="myDatePickerOptions"
+         placeholder="Select a date" required formControlName='dob' (ngModelChange) = "ageCalculation($event)"></my-date-picker>
+        <p *ngIf="dob.invalid">{{getErrorDOB()}}</p>                
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="exampleInputEmail2">Department</label>
+        <input type="email" class="form-control" id="inputDepart" placeholder="Department" formControlName='department'>
+        <p *ngIf="department.invalid">{{getErrorDepartment()}}</p>                
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="exampleInputEmail2">Gender</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Gender" formControlName='gender'>
+        <p *ngIf="name.invalid">{{getErrorGender()}}</p>                
+      </div>
+      <div class="form-group col-xs-4 disabled">
+        <label for="exampleInputEmail2">Age</label>
+        <input type="email" class="form-control" id="inputAge" placeholder="Age" [(ngModel)] = "ageCalc" disabled formControlName='age'>
+        <p *ngIf="age.invalid">{{getErrorAge()}}</p>                
+      </div>
+    <div class="form-group col-xs-offset-8 col-xs-4 text-right">
+        <button type="submit" class=" col-xs-12  btn btn-success button" [disabled]=!postAdd.valid>Employee {{operation}}</button>        
+    </div>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+.employee-list{
+    list-style-type: none;
+    display:inline-block;
+    margin:0;
+    padding:0;
+    border-bottom:1px solid black;
+}
+.employee-list > li{
+    display: inline-block; 
+    padding:20px 0px;
+}
+.employee-list > li > ul{
+    list-style-type: none;
+    display: inline-block; 
+}
+.table-head{
+    margin:0;
+    padding:20px 0;
+    list-style-type: none;
+    display: inline-block;
+    background-color:rgb(15, 206, 126);
+}
+.table-head li {
+    padding:0;
+    display: inline-block;
+    color:white;
+    border-right: 1px solid white;
+}
+.table-head li:last-child{
+    border-right: none!important;
+}
+.curd-operation{
+    display:inline-block;
+}
+.curd-operation li{
+    float:left;
+    padding:0px 5px;
+}

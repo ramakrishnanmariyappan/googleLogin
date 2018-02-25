@@ -1,0 +1,29 @@
+<div class="col-xs-12">
+  <ul class='col-xs-12 table-head text-center'>
+    <li class='col-xs-3'>Name</li>
+    <li class='col-xs-2'>Email</li>
+    <li class='col-xs-2'>DOB</li>
+    <li class='col-xs-1'>Department</li>
+    <li class='col-xs-1'>Gender</li>
+    <li class='col-xs-1'>Age</li>
+    <li class='col-xs-2'>Operation</li>
+  </ul>
+  <ul *ngFor="let employee of employees" class="employee-list col-xs-12  text-center">
+    <li class='col-xs-3'>{{employee.name}}</li>
+    <li class='col-xs-2'>{{employee.email}}</li>
+    <li class='col-xs-2'>{{employee.dob}}</li>
+    <li class='col-xs-1'>{{employee.department}}</li>
+    <li class='col-xs-1'>{{employee.gender}}</li>
+    <li class='col-xs-1'>{{employee.age}}</li>
+    <li class='col-xs-2'>
+      <ul class="curd-operation col-xs-12">
+        <li class="text-center">
+          <button class="btn btn-primary" [routerLink] ="['/home/employeeadd']" [queryParams]="{ id : employee._id}">Update</button>
+        </li>
+        <li class="text-center">
+          <button class="btn btn-danger" (click)="deleteEmployee(employee._id)">Delete</button>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
